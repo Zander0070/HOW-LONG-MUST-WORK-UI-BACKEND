@@ -18,7 +18,7 @@
         </div>
     </div>
     <div id="Main-Conatiner">
-        <div id="Sub-Main-container">
+        <div id="Sub-Main-container" style="display: block;">
             <div id="Income-Container" >
                 <p>Monthly Income</p>
                 <input placeholder="$ 5000" id="Income" type="number" class="ITEM">
@@ -33,12 +33,31 @@
             </div>
             
             <button id="Resultbtn">GET RESULTS</button>
-
+            <button id="Investbtn">Switch to Investment Calc</button>
         </div>
+
+        <div id="Sub-Main-Investment-container" style="display: none;">
+            <div id="Investment-Container" >
+                <p>Intial Investment</p>
+                <input placeholder="$ 50000" id="InInvestment" type="number" class="ITEM">
+            </div>
+            <div id="Income-Container">
+                <p>Monthly Payments</p>
+                <input placeholder="$ 1200" id="MonthlyPay" type="number" class="ITEM">
+            </div>
+            <div id="Income-Container" style="padding-bottom: 30px;">
+                <p>Amount of years</p>
+                <input placeholder="12 months" id="Years" type="number" class="ITEM">
+            </div>
+            
+            <button id="Resultbtn-Investment">GET RESULTS</button>
+            <button id="HoursWorkbtn">Switch to HoursWorkedCalc</button>
+        </div>
+
     </div>
     <div id="required-Container">
         <div id="Requeired-Sub-Container">
-            <h1>Time Investment Requred</h1>
+            <h1 id="Header2">Time Investment Requred</h1>
             <h1 id="Output"></h1>
             <p id="News"></p>
         </div>

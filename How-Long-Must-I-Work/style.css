@@ -52,6 +52,17 @@ html{
     
 }
 
+#Sub-Main-Investment-container{
+         width: 400px;
+    
+    text-align: center;
+    padding-bottom: 80px;
+    padding-top: 40px;
+    border-radius: 40px;
+    
+    box-shadow: 0px 0px 20px orange; 
+}
+
 #Income-Container{
 
 }
@@ -70,7 +81,50 @@ html{
     background: linear-gradient(to right, orange, rgb(235, 49, 80), red, purple);
     border:  none;
     box-shadow: 0px 0px 40px orange;
+    transition: box-shadow 0.3s ease-out;
 
+}
+
+#Resultbtn:hover{
+    box-shadow: 0px 0px 40px rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+#Investbtn{
+        padding: 15px;
+    border-radius: 20px;
+    background: linear-gradient(to right, orange, rgb(235, 49, 80), red, purple);
+    border:  none;
+    box-shadow: 0px 0px 40px orange;
+    transition: box-shadow 0.3s ease-out;
+}
+
+#Investbtn:hover{
+    box-shadow: 0px 0px 40px rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+#HoursWorkbtn{
+    padding: 15px;
+    border-radius: 20px;
+    background: linear-gradient(to right, orange, rgb(235, 49, 80), red, purple);
+    border:  none;
+    box-shadow: 0px 0px 40px orange;
+    transition: box-shadow 0.3s ease-out; 
+}
+
+#HoursWorkbtn:hover{
+    box-shadow: 0px 0px 40px rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+#Resultbtn-Investment{
+    padding: 15px;
+    border-radius: 20px;
+    background: linear-gradient(to right, orange, rgb(235, 49, 80), red, purple);
+    border:  none;
+    box-shadow: 0px 0px 40px orange;
+    transition: box-shadow 0.3s ease-out; 
 }
 
 #required-Container{
@@ -78,6 +132,12 @@ html{
     text-align: center;
     padding: 40px;
     display: flex;
+    transition: transform 1s ease-out;
+}
+
+#required-Container:hover{
+    transform: scale(1.05);
+    transition: 1s;
 }
 
 #Requeired-Sub-Container{
@@ -110,4 +170,9 @@ html{
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 0px 50px orange;
+}
+
+#Sub-Main-Investment-container,
+#Sub-Main-container{
+    transition: all 1s ease-out;
 }
