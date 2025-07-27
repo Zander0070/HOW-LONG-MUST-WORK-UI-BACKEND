@@ -63,9 +63,7 @@ html{
     box-shadow: 0px 0px 20px orange; 
 }
 
-#Income-Container{
 
-}
 
 .ITEM{
     border-radius: 20px;
@@ -146,8 +144,8 @@ html{
     background: linear-gradient(to right, orange, rgb(235, 49, 80), red, purple);
     padding: 40px;
     border-radius: 20px;
-    height: 200px;
-    width: 600px;
+    height: 140px;
+    width: 450px;
 }
 
 #Stats-Container{

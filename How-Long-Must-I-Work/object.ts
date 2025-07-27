@@ -65,6 +65,7 @@ const Page1 = document.getElementById('Sub-Main-container') as HTMLDivElement;
 const Page2 = document.getElementById('Sub-Main-Investment-container') as HTMLDivElement;
 const PageSwitch2 = document.getElementById('HoursWorkbtn') as HTMLButtonElement;
 const SubHeader = document.getElementById('Header2') as HTMLHeadElement
+const SubbieHeader = document.getElementById('Subbie-Header') as HTMLHeadElement;
 let showingIncome = true;
 
 PageSwitch.addEventListener('click', ()=>{
@@ -72,12 +73,16 @@ PageSwitch.addEventListener('click', ()=>{
         Page1.style.display ='none'
         Page2.style.display = 'block';
         SubHeader.innerHTML = 'Your Total Investment is'
+        SubbieHeader.innerHTML = 'Months'
          Display.innerHTML = ''; 
+         HourDisplay.innerHTML = ''; 
     } else {
         Page1.style.display='block';
         Page2.style.display='none';
         SubHeader.innerHTML = 'The Investment Required'
+        SubbieHeader.innerHTML = 'Hourly rate'
          Display.innerHTML = ''; 
+         HourDisplay.innerHTML = ''; 
     }
 
     showingIncome = !showingIncome;
@@ -88,14 +93,18 @@ PageSwitch2.addEventListener('click', ()=>{
         Page1.style.display ='block'
         Page2.style.display = 'none';
         SubHeader.innerHTML = 'The Investment Required'
+        SubbieHeader.innerHTML = 'Hourly rate'
          Display.innerHTML = ''; 
+         HourDisplay.innerHTML = ''; 
 
        
     } else {
         Page1.style.display='none';
         Page2.style.display='block';
         SubHeader.innerHTML = 'Your Total Investment is'
-        Display.innerHTML = ''; 
+        SubbieHeader.innerHTML = 'Months'
+        Display.innerHTML = '';
+        HourDisplay.innerHTML = ''; 
     }
 
     showingIncome = !showingIncome;
@@ -106,9 +115,14 @@ PageSwitch2.addEventListener('click', ()=>{
 const InvestmentButton = document.getElementById('Resultbtn-Investment') as HTMLButtonElement;
 const IntitalInvestment = document.getElementById('InInvestment') as HTMLInputElement;
 const MonthlyContrubtion = document.getElementById('MonthlyPay') as HTMLInputElement;
+const IntrestRate = document.getElementById('Rates') as HTMLInputElement;
 const InvestmentPeriod = document.getElementById('Years') as HTMLInputElement;
 
+function TimePeriod(){
+    let Investment = parseFloat(InvestmentPeriod.value) || 0;
 
+    return Investment
+}
 
 
 function TotalInvestment(){
@@ -116,6 +130,7 @@ function TotalInvestment(){
     let MonthlyContro = parseFloat(MonthlyContrubtion.value) || 0;
     let timeOfInvestment = parseFloat(InvestmentPeriod.value) || 0; 
     
+
     let TOTAL = 0;
     TOTAL = MonthlyContro * timeOfInvestment;
     TOTAL = TOTAL + Investment;
@@ -128,7 +143,9 @@ function TotalInvestment(){
 
 function DisplayInvestment(){
     let GrandTOTAL = TotalInvestment();
+    let Timeeee = TimePeriod();
     Display.innerHTML = `$ ${GrandTOTAL}`
+    HourDisplay.innerHTML = `${Timeeee}`
 
 }
 

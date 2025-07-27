@@ -39,19 +39,24 @@ var Page1 = document.getElementById('Sub-Main-container');
 var Page2 = document.getElementById('Sub-Main-Investment-container');
 var PageSwitch2 = document.getElementById('HoursWorkbtn');
 var SubHeader = document.getElementById('Header2');
+var SubbieHeader = document.getElementById('Subbie-Header');
 var showingIncome = true;
 PageSwitch.addEventListener('click', function () {
     if (showingIncome) {
         Page1.style.display = 'none';
         Page2.style.display = 'block';
         SubHeader.innerHTML = 'Your Total Investment is';
+        SubbieHeader.innerHTML = 'Months';
         Display.innerHTML = '';
+        HourDisplay.innerHTML = '';
     }
     else {
         Page1.style.display = 'block';
         Page2.style.display = 'none';
         SubHeader.innerHTML = 'The Investment Required';
+        SubbieHeader.innerHTML = 'Hourly rate';
         Display.innerHTML = '';
+        HourDisplay.innerHTML = '';
     }
     showingIncome = !showingIncome;
 });
@@ -60,13 +65,17 @@ PageSwitch2.addEventListener('click', function () {
         Page1.style.display = 'block';
         Page2.style.display = 'none';
         SubHeader.innerHTML = 'The Investment Required';
+        SubbieHeader.innerHTML = 'Hourly rate';
         Display.innerHTML = '';
+        HourDisplay.innerHTML = '';
     }
     else {
         Page1.style.display = 'none';
         Page2.style.display = 'block';
         SubHeader.innerHTML = 'Your Total Investment is';
+        SubbieHeader.innerHTML = 'Months';
         Display.innerHTML = '';
+        HourDisplay.innerHTML = '';
     }
     showingIncome = !showingIncome;
 });
@@ -74,7 +83,12 @@ PageSwitch2.addEventListener('click', function () {
 var InvestmentButton = document.getElementById('Resultbtn-Investment');
 var IntitalInvestment = document.getElementById('InInvestment');
 var MonthlyContrubtion = document.getElementById('MonthlyPay');
+var IntrestRate = document.getElementById('Rates');
 var InvestmentPeriod = document.getElementById('Years');
+function TimePeriod() {
+    var Investment = parseFloat(InvestmentPeriod.value) || 0;
+    return Investment;
+}
 function TotalInvestment() {
     var Investment = parseFloat(IntitalInvestment.value) || 0;
     var MonthlyContro = parseFloat(MonthlyContrubtion.value) || 0;
@@ -86,6 +100,8 @@ function TotalInvestment() {
 }
 function DisplayInvestment() {
     var GrandTOTAL = TotalInvestment();
+    var Timeeee = TimePeriod();
     Display.innerHTML = "$ ".concat(GrandTOTAL);
+    HourDisplay.innerHTML = "".concat(Timeeee);
 }
 InvestmentButton.addEventListener('click', DisplayInvestment);
